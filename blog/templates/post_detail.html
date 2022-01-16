@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="../static/css/style.css">
+    <title>{{ post.title }}</title>
+</head>
+<body>
+    <div class="post_container">
+        <h1>{{ post.title }}</h1>
+        <p>{{ post.text }}</p>
+        <p>{{ post.created }}</p>
+        <img src="{{ post.image.url }}" alt="">
+    </div>
+</body>
+</html>

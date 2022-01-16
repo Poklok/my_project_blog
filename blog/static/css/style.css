@@ -1,0 +1,22 @@
+*{
+    box-sizing: border-box;
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+}
+body{
+    background-image: url(../img/grass-84622.jpg);
+}
+h1{
+    color:gold;
+}
+p{
+    color: gold;
+}
+.post_container{
+    display: inline-block;
+    width: 500px;
+    height: 500px;
+}
+img{
+    width: 500px;
+    height: 450px;
+}
