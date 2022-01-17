@@ -2,8 +2,8 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <title>Социальные сети</title>
     <link rel="stylesheet" href="../static/css/style.css">
-    <title>{{ post.title }}</title>
 </head>
 <body>
 {% load static %}
@@ -12,11 +12,11 @@
     <li><a href="{% url 'social_links' %}">Социальные сети</a></li>
     <li><a href="#">Страница 2</a></li>
 </ul>
-<div class="post_container">
-    <h1>{{ post.title }}</h1>
-    <p>{{ post.text }}</p>
-    <p>{{ post.created }}</p>
-    <img src="{{ post.image.url }}" alt="">
-</div>
+<dvi>
+    <h1>Социальные сети</h1>
+    <a href="https://www.vk.com"><img src="../../media/image/vk.jpg" alt=""></a>
+    <a href="https://www.instagram.com/"><img src="../../media/image/inst.jpg" alt=""></a>
+    <a href="https://www.youtube.com/"><img src="../../media/image/youtube.jpg" alt=""></a>
+</dvi>
 </body>
 </html>

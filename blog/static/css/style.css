@@ -1,22 +1,57 @@
-*{
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu&display=swap');
+
+* {
     box-sizing: border-box;
-    font-family: Verdana, Arial, Helvetica, sans-serif;
+    font-family: 'Ubuntu', sans-serif;
 }
-body{
+
+body {
     background-image: url(../img/grass-84622.jpg);
 }
-h1{
-    color:gold;
-}
-p{
+
+h1 {
     color: gold;
 }
-.post_container{
+
+p {
+    color: gold;
+}
+
+.navigation {
+    background-color: rgb(177, 131, 131);
+    height: 50px;
+    margin: 0;
+    padding: 10px;
+    list-style-type: none;
+    border: 1px solid black;
+    border-radius: 10px;
+}
+
+.navigation li {
+    display: inline-block;
+    vertical-align: bottom;
+    margin-left: 300px;
+}
+
+.navigation a {
+    text-decoration: none;
+    color: white;
+    font-size: 24px;
+}
+
+.navigation a:hover {
+    text-decoration: underline;
+    text-shadow: 3px 3px 5px black;
+    cursor: pointer;
+}
+
+.post_container {
     display: inline-block;
     width: 500px;
     height: 500px;
 }
-img{
+
+img {
     width: 500px;
     height: 450px;
 }
