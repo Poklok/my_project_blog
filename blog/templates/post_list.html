@@ -1,25 +1,9 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <link rel="stylesheet" href="../static/css/style.css">
-    <title>Мой блог</title>
-</head>
-<body>
-{% load static %}
-<ul class="navigation">
-    <li><a href="{% url 'post_list' %}">Главная</a></li>
-    <li><a href="{% url 'social_links' %}">Социальные сети</a></li>
-    <li><a href="#">Страница 2</a></li>
-</ul>
-{% for post in posts %}
-    <div class="post_container">
+{% extends "base.html"%}
+
+{% block content %}
+    {% for post in posts %}
         <h1><a href="{% url 'post_detail' pk=post.pk %}">{{ post.title }}</a></h1>
         <p>{{ post.text }}</p>
-        <div class="img_post">
-            <img src="{{ post.image.url }}" alt="">
-        </div>
-    </div>
-{% endfor %}
-</body>
-</html>
+        <img class="img-thumbnail" src="{{ post.image.url }}" alt="">
+    {% endfor %}
+{% endblock %}

@@ -1,22 +1,9 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Социальные сети</title>
-    <link rel="stylesheet" href="../static/css/style.css">
-</head>
-<body>
-{% load static %}
-<ul class="navigation">
-    <li><a href="{% url 'post_list' %}">Главная</a></li>
-    <li><a href="{% url 'social_links' %}">Социальные сети</a></li>
-    <li><a href="#">Страница 2</a></li>
-</ul>
-<dvi>
+{% extends 'base.html' %}
+{% block content %}
     <h1>Социальные сети</h1>
+    <div class="container">
     <a href="https://www.vk.com"><img src="../../media/image/vk.jpg" alt=""></a>
     <a href="https://www.instagram.com/"><img src="../../media/image/inst.jpg" alt=""></a>
     <a href="https://www.youtube.com/"><img src="../../media/image/youtube.jpg" alt=""></a>
-</dvi>
-</body>
-</html>
+    </div>
+{% endblock %}
