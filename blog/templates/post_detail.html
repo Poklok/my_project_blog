@@ -1,13 +1,37 @@
 {% extends 'base.html' %}
 {% block content %}
-        <div class="container">
-            <h1>{{ post.title }}</h1>
-            <p>{{ post.author }}</p>
-            <p>{{ post.text }}</p>
-            <img src="{{ post.image.url }}" alt="">
-            <p>{{ post.created }}</p>
-            <p> Тэги : {{ post.tags.all|join:", " }}</p>
+    <div class="container">
+        <h1>{{ post.title }}</h1>
+        <p>{{ post.author }}</p>
+        <p>{{ post.text }}</p>
+        <img src="{{ post.image.url }}" alt="">
+        <p>{{ post.created }}</p>
+        {% with comments.count as total_comments %}
+            <h2>
+                Всего комментариев: {{ total_comments }}
+            </h2>
+        {% endwith %}
+        {% for comment in comments %}
+            <div style="background-color: gold">
+                <p>Коментарий от: {{ comment.name }}</p>
+                <p>{{ comment.created }}</p>
+                <p>Коментарий: {{ comment.body }}</p>
+            </div>
+        {% endfor %}
+        <div style="background-color: azure">
+            {% if new_comment %}
+                <h2>Dobavlen</h2>
+            {% else %}
+                <form action="{% url 'post_detail' pk=post.pk %}" method="post">
+                    {{ comment_form.as_p }}
+                    {% csrf_token %}
+                    <p><input type="submit" value="Add comment"></p>
+                </form>
+            {% endif %}
         </div>
+    </div>
+    <div>
+
+    </div>
 {% endblock %}
-{% block paginator %}
-{% endblock %}
+

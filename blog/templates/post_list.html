@@ -1,9 +1,16 @@
-{% extends "base.html"%}
-
+{% extends "base.html" %}
 {% block content %}
     {% for post in posts %}
         <h1><a href="{% url 'post_detail' pk=post.pk %}">{{ post.title }}</a></h1>
         <p>{{ post.text }}</p>
         <img class="img-thumbnail" src="{{ post.image.url }}" alt="">
+        <div class="tags">#:{% for tag in post.tags.all %}
+            <a href="{% url 'post_list_by_tag' tag.slug %}" style="text-decoration: none">
+                {{ tag.name }}
+            </a>
+            {% if not forloop.last %}, {% endif %}
+        {% endfor %}
+        </div>
     {% endfor %}
+    {% include 'paginator.html' %}
 {% endblock %}

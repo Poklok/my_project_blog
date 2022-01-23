@@ -1,22 +1,13 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
 <div class="pagination" style="display: flex; justify-content: center; bottom: 100%">
     <span class="step-links">
-        {% if page.has_previous %}
-            <a href="?page={{ page.previous_page_number }}">Назад</a>
+        {% if page_obj.has_previous %}
+            <a href="?page={{ page_obj.previous_page_number }}">Назад</a>
         {% endif %}
         <span class="current">
-            Страница {{ page.number }} из {{ page.paginator.num_pages }}
+            Страница {{ page_obj.number }} из {{ page_obj.paginator.num_pages }}
         </span>
-        {% if page.has_next %}
-            <a href="?page={{ page.next_page_number }}">Вперед</a>
+        {% if page_obj.has_next %}
+            <a href="?page={{ page_obj.next_page_number }}">Вперед</a>
         {% endif %}
     </span>
 </div>
-</body>
-</html>
